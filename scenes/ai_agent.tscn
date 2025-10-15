@@ -1,0 +1,43 @@
+[gd_scene load_steps=10 format=3 uid="uid://ai_agent"]
+
+[ext_resource type="Script" path="res://scripts/ai_agent.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://agent_sprite" path="res://assets/sprites/agent_idle.png" id="2"]
+
+[node name="AIAgent" type="CharacterBody2D"]
+script = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_123")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_abc")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+target_desired_distance = 10.0
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_def", 200.0)
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_ghi", 50.0)
+
+[node name="SightRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(300, 0)
+collision_mask = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 30.0
+offset_bottom = -50.0
+max_value = 100.0
+value = 100.0
