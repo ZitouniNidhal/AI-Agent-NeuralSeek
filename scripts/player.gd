@@ -55,3 +55,4 @@ func die():
 	global_position = Vector2(100, 100)
 	health = max_health
 	health_bar.value = health
+	
