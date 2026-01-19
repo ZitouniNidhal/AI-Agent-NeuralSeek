@@ -56,3 +56,5 @@ radius = 200.0
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 50.0
+[sub_resource type="CircleShape2D" id=3]
+radius = 50.0
