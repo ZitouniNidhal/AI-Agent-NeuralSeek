@@ -248,6 +248,3 @@ func die():
 	# TODO: ajouter animation de mort, sons, etc.
 	queue_free()
 
-func _update_health_bar():
-	if health_bar:
-		health_bar.value = clamp(health, 0, max_health)
